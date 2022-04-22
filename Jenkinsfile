@@ -15,7 +15,6 @@ pipeline{
                     sh 'docker login -u viraj5132 -p Virajpatel#123'
                  }  
                  sh 'docker push viraj5132/nodejsapp-1.0:latest'
-                }
             }
         }
     
