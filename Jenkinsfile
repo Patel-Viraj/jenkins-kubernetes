@@ -4,7 +4,7 @@ pipeline{
         stage('Build Docker Image') {
             steps {
                 script {
-                  sh 'docker build -t devopshint/nodejsapp-1.0:latest .'
+                  sh 'docker build -t viraj5132/nodejsapp-1.0:latest .'
                 }
             }
         }
