@@ -21,7 +21,7 @@ pipeline{
         stage('Deploy to Kubernetes') {
             steps {
                 sshagent(['3.91.222.148']) {
-                     sh "scp -i /home/viraj/Downloads/kubernetes.cluster.k8s.local-e7:31:61:8d:bb:ec:44:31:37:b3:19:cd:25:89:2f:ba.pem nodejsapp.yaml ubuntu@3.222.116.50:/home/ubuntu/kubernetes"
+                     sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml ubuntu@3.222.116.50:/home/ubuntu/kubernetes"
                      script {
                          try{
                              sh "ssh ubuntu@3.222.116.50 kubectl create -f /home/ubuntu/kubernetes/nodejsapp.yaml"
