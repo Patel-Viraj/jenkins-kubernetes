@@ -21,12 +21,12 @@ pipeline{
         stage('Deploy to Kubernetes') {
             steps {
                 sshagent(['3.91.222.148']) {
-                     sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml ubuntu@3.222.116.50:/home/ubuntu/kubernetes"
+                     sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml ubuntu@34.237.2.0:/home/ubuntu/kubernetes"
                      script {
                          try{
-                             sh "ssh ubuntu@3.222.116.50 kubectl create -f /home/ubuntu/kubernetes/nodejsapp.yaml"
+                             sh "ssh ubuntu@34.237.2.0 kubectl create -f /home/ubuntu/kubernetes/nodejsapp.yaml"
                          } catch(error){
-                             sh "ssh ubuntu@3.222.116.50 kubectl create -f /home/ubuntu/kubernetes/nodejsapp.yaml"
+                             sh "ssh ubuntu@34.237.2.0 kubectl create -f /home/ubuntu/kubernetes/nodejsapp.yaml"
                          }
                      }
                 }
