@@ -24,11 +24,12 @@ pipeline{
                      sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml ubuntu@34.237.2.0:/home/ubuntu/kubernetes"
                      script {
                          try{
-                             sh " ssh ubuntu@34.237.2.0  cd /home/ubuntu/kubernetes/ && pwd"
+                             sh " ssh ubuntu@34.237.2.0   pwd"
                            //  sh "pwd"
-                             sh "ssh ubuntu@34.237.2.0 kubectl create -f ."
+                          //   sh "ssh ubuntu@34.237.2.0 kubectl create -f ."
                          } catch(error){
-                             sh "ssh ubuntu@34.237.2.0 kubectl create -f ."
+                               sh "echo staring deploy the image"
+                          //   sh "ssh ubuntu@34.237.2.0 kubectl create -f ."
                          }
                      }
                 }
