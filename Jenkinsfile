@@ -25,9 +25,9 @@ pipeline{
                    //  sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml ubuntu@34.237.2.0:/home/ubuntu/kubernetes"
                      script {
                          try{
-                              sh "ssh ubuntu@34.237.2.0 kubectl create -f ."
+                              sh "ssh ubuntu@34.237.2.0 kubectl create -f nodejsapp.yaml"
                          } catch(error){
-                              sh "ssh ubuntu@34.237.2.0 kubectl create -f ."
+                              sh "ssh ubuntu@34.237.2.0 kubectl create -f nodejsapp.yaml"
                          }
                      }
                 }
