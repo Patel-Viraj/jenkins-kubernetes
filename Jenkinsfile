@@ -5,7 +5,7 @@ pipeline{
             steps {
                 sh "echo staring build the image"
                 script {
-                    sh 'docker build -t viraj5132/nodejsapp-1.0:latest .'
+                    sh 'sudo docker build -t viraj5132/nodejsapp-1.0:latest .'
                 }
             }
         }
@@ -13,9 +13,9 @@ pipeline{
             steps {
                 sh "echo staring deploy the image"
                 script {
-                    sh 'docker login -u viraj5132 -p Virajpatel#123'
+                    sh 'sudo docker login -u viraj5132 -p Virajpatel#123'
                 }  
-                sh 'docker push viraj5132/nodejsapp-1.0:latest'
+                sh 'sudo docker push viraj5132/nodejsapp-1.0:latest'
             }
         }
         stage('Deploy to Kubernetes') {
