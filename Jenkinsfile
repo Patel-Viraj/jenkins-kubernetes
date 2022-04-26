@@ -16,7 +16,8 @@ pipeline{
         }
         stage('Remove Docker Image') {
             steps {
-                sh "docker rmi -f viraj5132/nodejsapp-1.0"    
+                   sh "echo staring deploy the image"
+                // sh "docker rmi -f viraj5132/nodejsapp-1.0"    
             }
         }
         stage('Deploy to Kubernetes') {
