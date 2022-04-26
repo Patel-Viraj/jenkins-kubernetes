@@ -23,6 +23,7 @@ pipeline{
         stage('Deploy to Kubernetes') {
             steps {
                 sshagent(['3.91.222.148']) {
+                    sh "ssh ubuntu@$DEPLOY_IP docker rmi -f viraj5132/nodejsapp-1.0"
                     sh "echo staring deploy the image in Kubernetes"
                     sh "scp -o StrictHostKeyChecking=no nodejsapp.yaml ubuntu@$DEPLOY_IP:/home/ubuntu/"
                     sh "ssh ubuntu@$DEPLOY_IP kubectl apply -f nodejsapp.yaml" 
