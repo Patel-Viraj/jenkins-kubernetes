@@ -18,6 +18,7 @@ spec:
     spec:
       containers:
       - name: nodejs-app
+        imagePullPolicy: always
         image: "viraj5132/nodejsapp-1.0:latest"
         ports:
           - containerPort: 3000
